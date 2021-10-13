@@ -24,37 +24,59 @@
             <p id="distance"> Distance is unknown. </p>
 
             <div class="row">
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img0" onclick="check(0)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img1" onclick="check(1)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img2" onclick="check(2)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img3" onclick="check(3)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img4" onclick="check(4)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img5" onclick="check(5)"> </div>
             </div>
             <div class="row">
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img6" onclick="check(6)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img7" onclick="check(7)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img8" onclick="check(8)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img9" onclick="check(9)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img10" onclick="check(10)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img11" onclick="check(11)"> </div>
             </div>
             <div class="row">
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img12" onclick="check(12)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img13" onclick="check(13)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img14" onclick="check(14)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img15" onclick="check(15)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img16" onclick="check(16)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img17" onclick="check(17)"> </div>
             </div>
             <div class="row">
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
-                <div class="col"> <img src="bush.jpg" class="img-fluid"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img18" onclick="check(18)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img19" onclick="check(19)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img20" onclick="check(20)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img21" onclick="check(21)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img22" onclick="check(22)"> </div>
+                <div class="col"> <img src="bush.jpg" class="img-fluid" id="img23" onclick="check(23)"> </div>
             </div>
         </div>
     </body>
+    <script>
+
+        var ids = new Array(24)
+
+        for (let i = 0; i <= ids.length; i++)
+            ids[i] = "img" + i
+
+        var triesCount = 0
+        var animalLocation = 13
+
+        function check(position) {
+            if (position == animalLocation) {
+                document.getElementById(ids[position]).src("lemur.jpg")
+                triesCount++
+            } else {
+                document.getElementById(ids[position]).src("hole.jpg")
+                triesCount++
+            } tries = document.getElementById("tries")
+            tries.innerHTML = "Number of tries is " + triesCount
+            console.log("Number of tries is " + triesCount)
+        }
+    </script>
 </html>

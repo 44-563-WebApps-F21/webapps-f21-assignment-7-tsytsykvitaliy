@@ -33,11 +33,11 @@
                 }, (3-i)*1000)
             setTimeout(function() {
                 if (myTime === undefined)
-                    document.getElementById('countdown').innerHTML = "Too Slow"
+                    document.getElementById('target').innerHTML = "Too Slow"
                 else {
                     var buttonTime = Date.now()
                     var resultTime = buttonTime - myTime
-                    document.getElementById('countdown').innerHTML = "Time was " + resultTime
+                    document.getElementById('target').innerHTML = "Time was " + resultTime
             }}, 3000)
         }
     </script>

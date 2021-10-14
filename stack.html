@@ -30,7 +30,7 @@
 		<h2>
 			Vitaliy Tsytsyk builds a stack.
 		</h2> 
-		<input name="text" type="text" id="text"> />
+		<input name="text" type="text" id="text" />
 		<div class="flex-container" id="target">
 			<div class = "stack">row item 1</div>   
 		  	<div class = "stack">row item 2</div>  
@@ -62,8 +62,8 @@
 		function zap() {
 			var zapItems = document.getElementsByClassName("stack")
 			var input = document.getElementById("text").value
-			for (var element of zapItems) {
-				if (element == input) {
+			for (const element of zapItems) {
+				if (element === input) {
 					zapItems[element].remove()
 					console.log(element)
 				}

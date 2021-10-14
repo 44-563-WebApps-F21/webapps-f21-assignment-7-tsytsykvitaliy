@@ -16,8 +16,8 @@
         <p id="target">Your time </p>
         <p id="countdown">Count </p>
 
-        <button type="button" class="btn btn-primary" onclick="recordReact()"> Start Timer </button>
-        <button type="button" class="btn btn-primary"> React Now </button>
+        <button type="button" class="btn btn-primary" onclick="startTime()"> Start Timer </button>
+        <button type="button" class="btn btn-primary" onclick="recordReact()"> React Now </button>
     </body>
     <script> 
 
@@ -25,6 +25,20 @@
         function recordReact() {
             myTime = Date.now()
             console.log(myTime)
+        }
+        function startTime() {
+            for (let i = 0; i <= 4; i++)
+                setTimeout(function() {
+                    document.getElementById('countdown').innerHTML = i
+                }, (3-i)*1000)
+            setTimeout(function() {
+                if (myTime === undefined)
+                    document.getElementById('countdown').innerHTML = "Too Slow"
+                else {
+                    var buttonTime = Date.now()
+                    var resultTime = buttonTime - myTime
+                    document.getElementById('countdown').innerHTML = "Time was " + resultTime
+            }}, 3000)
         }
     </script>
 </html>

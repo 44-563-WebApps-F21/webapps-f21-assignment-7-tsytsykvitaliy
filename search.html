@@ -61,7 +61,7 @@
 
         var ids = new Array(24)
 
-        for (let i = 0; i <= ids.length; i++)
+        for (let i = 0; i < ids.length; i++)
             ids[i] = "img" + i
 
         var triesCount = 0
@@ -69,14 +69,31 @@
 
         function check(position) {
             if (position == animalLocation) {
-                document.getElementById(ids[position]).src("lemur.jpg")
+                document.getElementById(ids[position]).src = "lemur.jpg"
                 triesCount++
-            } else {
-                document.getElementById(ids[position]).src("hole.jpg")
+            }
+            else {
+                document.getElementById(ids[position]).src = "hole.jpg"
                 triesCount++
-            } tries = document.getElementById("tries")
-            tries.innerHTML = "Number of tries is " + triesCount
-            console.log("Number of tries is " + triesCount)
+            }
+            tries = document.getElementById("tries")
+            tries.innerHTML = "Number of tries is " + triesCount + "."
+            dist = document.getElementById("distance")
+            dist.innerHTML = "Distance is " + distance(position, animalLocation) + "."
+        }
+        
+        function distance(pos1, pos2) {
+            var dist = 0
+            var vert = 0
+            var hor = 0
+            vert = Math.abs(Math.floor(pos2/6) - Math.floor(pos1/6))
+            hor = Math.abs(pos2%6 - pos1%6)
+
+            if (vert > hor)
+                dist = vert
+            else
+                dist = hor
+            return dist
         }
     </script>
 </html>

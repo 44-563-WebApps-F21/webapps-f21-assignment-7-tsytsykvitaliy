@@ -38,6 +38,8 @@
 		</div>
 		<p> Press the button to create an new element of type div and then add it to the container. </p>
 		<button onclick="makeNewDiv()">Push Value</button>
+		<button onclick="popItem()"> Pop </button>
+        <button onclick="zap()"> Zap Values </button>
 	</body>
 	<script>
 
@@ -51,6 +53,21 @@
 			/* add it to the container */
 			document.getElementById('target').appendChild(element)
 			
+		}
+		function popItem() {
+            var stackItems = document.getElementsByClassName("stack")
+            if (stackItems.length > 0)
+                stackItems[stackItems.length - 1].remove()
+        }
+		function zap() {
+			var zapItems = document.getElementsByClassName("stack")
+			var input = document.getElementById("text").value
+			for (var element of zapItems) {
+				if (element == input) {
+					zapItems[element].remove()
+					console.log(element)
+				}
+			}
 		}
 	</script>
 </html>	
